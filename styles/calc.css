@@ -303,3 +303,29 @@ button.animate {
   color: darkred;
   font-size: 18px;
 }
+
+.text {  
+  left: 7%;
+  top: 45%;
+  overflow: auto;  /* Permite desplazarse si el contenido es demasiado grande */
+  text-align: center;
+  display: flex;  
+  flex-direction: column;
+  font-size: 3vw;
+  max-width: 20%; 
+  max-height: 100vh;
+  height: 21rem; 
+  align-items: center;
+  font-family: fantasy;
+  position: absolute;
+  border-radius: 10px 100px 10px 100px;
+  background: #913cd7;
+  box-shadow: -16px 16px 0px #3a1856, 16px -16px 0px #e860ff;
+  padding: 10px;
+  justify-content: center;
+}
+
+.frase1, .frase2 {
+  word-wrap: break-word;  /* Evita que las palabras largas se desborden */
+  overflow-wrap: break-word; /* Esto es redundante si usas word-wrap */
+}
