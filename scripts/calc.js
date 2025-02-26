@@ -24,6 +24,7 @@ document.getElementById('dividir').addEventListener('click', function() {
     document.getElementById('operacion').textContent = '÷';  // Cambiar el símbolo a "÷"
 });
 
+
 /*Imputs a usar*/
 
 document.getElementById('input1').addEventListener('input', function() {
@@ -36,14 +37,14 @@ document.getElementById('input3').addEventListener('input', function() {
     numeros[1] = num2;  // Guardamos el segundo número en el array
 });
 
-
 /*Apartado de Operaciones*/
 
 document.getElementById('start').addEventListener('click', function() {
+    // Primero, actualizamos los valores de los números antes de cualquier operación
     let input1Value = document.getElementById('input1').value;
     let input3Value = document.getElementById('input3').value;
 
-    // Solo números (sin letras ni símbolos)
+    // Expresión regular para permitir solo números (sin letras ni símbolos)
     var regex = /^[0-9]*$/;
 
     // Validación: Si alguno de los campos tiene letras o símbolos
@@ -51,6 +52,12 @@ document.getElementById('start').addEventListener('click', function() {
         alert("Ups, esta calculadora solo usa Números Naturales");
         return;  // Detener la ejecución de la operación
     }
+
+    // Actualizar los valores de los números con los valores actuales de los inputs
+    let num1 = parseFloat(document.getElementById('input1').value) || 0;
+    let num2 = parseFloat(document.getElementById('input3').value) || 0;
+    numeros[0] = num1; // Actualizamos numeros[0] con el valor de input1
+    numeros[1] = num2; // Actualizamos numeros[1] con el valor de input3
 
     if (numeros.length < 2) {
         alert("Por favor ingrese ambos números.");
@@ -75,17 +82,30 @@ document.getElementById('start').addEventListener('click', function() {
         if (numeros[1] !== 0) {
             resultado = numeros[0] / numeros[1];
         } else {
-            resultado = 'No se puede dividir por 0';
+            resultado = 'No se puede dividir por 0'; // **Esto se asigna al h3 "resultado" si se intenta dividir por 0**
         }
     }
 
-    // Plantar el resultado en la página
-    document.getElementById('resultado').textContent = resultado;
+    document.getElementById('resultado').textContent = resultado; // El resultado se muestra aquí
 
-    // Agregar el resultado al historial
-    historial.push(resultado);
+
+    if (!isNaN(resultado)) {  // Verificamos si el resultado es un número
+        document.getElementById('input1').value = resultado; // Asignar el resultado al input1 solo si es un número
+    } else {
+        document.getElementById('input1').value = ''; // Limpiar el campo input1 si no es un número (error)
+    }
 
     // Colocar el resultado en el campo 1 y resetear el 2
-    document.getElementById('input1').value = resultado;
     document.getElementById('input3').value = ''; // Limpiar este campo
 });
+
+// Función para un reseteo simple
+document.getElementById('reset').addEventListener('click', function() {
+    // Limpiar solo los campos de números, el resultado y la operación
+    document.getElementById('input1').value = '';
+    document.getElementById('input3').value = '';
+    document.getElementById('resultado').textContent = '0';
+    document.getElementById('operacion').textContent = ''; 
+});
+
+
