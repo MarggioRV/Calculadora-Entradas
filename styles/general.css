@@ -25,11 +25,11 @@ body {
   --gray: #9EA1AF;
   --red: #FC6963;
   --celeste: #3cc2ef;
-  --redR: #ed6077;
   --grey: #666b80;
+  --red2: #ed6077;
   --transp-black: rgba(0, 0, 0, 0.1);
-  --Stroket: 4px solid #402f44;
   --blackM: #402f44;
+  --sStroke: 4px solid #402f44;
 }
 
 footer {
@@ -83,7 +83,7 @@ nav ul li a:hover {
 }
 
 h1 {
-  font-size: 5em; /* Define el tamaño de la fuente del texto. */
+  font-size: 5em; 
   color: purple;
   text-shadow: 2px 2px 100px violet, 4px 4px 1px black; 
   -webkit-text-stroke: 1px violet; 

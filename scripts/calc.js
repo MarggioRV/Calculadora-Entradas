@@ -4,6 +4,7 @@ let historial = [];  // Array para almacenar los resultados previos
 
 /*Operaciones*/
 
+// Asignar operación para cada botón de operación
 document.getElementById('sumar').addEventListener('click', function() {
     operacion = 'sumar';
     document.getElementById('operacion').textContent = '+';  // Cambiar el símbolo a "+"
@@ -23,7 +24,6 @@ document.getElementById('dividir').addEventListener('click', function() {
     operacion = 'dividir';
     document.getElementById('operacion').textContent = '÷';  // Cambiar el símbolo a "÷"
 });
-
 
 /*Imputs a usar*/
 
@@ -90,6 +90,8 @@ document.getElementById('start').addEventListener('click', function() {
 
 
     if (!isNaN(resultado)) {  // Verificamos si el resultado es un número
+        historial.push(resultado); // Agregar el resultado al historial
+        mostrarHistorial(); // Llamar a la función para mostrar el historial
         document.getElementById('input1').value = resultado; // Asignar el resultado al input1 solo si es un número
     } else {
         document.getElementById('input1').value = ''; // Limpiar el campo input1 si no es un número (error)
@@ -108,4 +110,15 @@ document.getElementById('reset').addEventListener('click', function() {
     document.getElementById('operacion').textContent = ''; 
 });
 
+// Función para mostrar el historial de operaciones
+function mostrarHistorial() {
+    const ul = document.getElementById('numeros');
+    ul.innerHTML = ''; // Limpiar la lista antes de agregar los nuevos elementos
 
+    // Mostrar solo el resultado del historial
+    historial.forEach(function(resultado) {
+        let li = document.createElement('li');
+        li.textContent = `Resultado = ${resultado}`; // Mostrar solo el resultado
+        ul.appendChild(li);
+    });
+}
