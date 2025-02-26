@@ -24,4 +24,14 @@ document.getElementById('dividir').addEventListener('click', function() {
     document.getElementById('operacion').textContent = '÷';  // Cambiar el símbolo a "÷"
 });
 
+/*Imputs a usar*/
 
+document.getElementById('input1').addEventListener('input', function() {
+    let num1 = parseFloat(this.value) || 0;
+    numeros[0] = num1;  // Guardamos el primer número en el array
+});
+
+document.getElementById('input3').addEventListener('input', function() {
+    let num2 = parseFloat(this.value) || 0;
+    numeros[1] = num2;  // Guardamos el segundo número en el array
+});
