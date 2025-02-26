@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <title>Js: Tutorial en Practica</title>
+
+    <!-- Vinculamos el archivo CSS externo -->
+    <link rel="stylesheet" href="styles/general.css" />
+    <link rel="stylesheet" href="styles/calc.css" />
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Js: Tutorial en Practica</h1>
+    </header>
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">Calculadora</a></li>
+        <li><a href="tickets.html">Entradas</a></li>
+      </ul>
+    </nav>
+
+    <main>
+     
+        <section class="calc">
+  
+            <section class="calc-body">
+            
+                <section class="hd"></section>
+              
+                <section class="screen">
+                
+                    <span id="spanA"></span>
+                  
+                    <section class="glass">
+              
+                        <section class="input-container">
+              
+                            <input type="text" class="glass-input" id="input1" maxlength="7" placeholder="__ _ __">
+              
+                            <div id="operacion-container">
+                            <span id="operacion"></span> <!-- Contenedor del símbolo de operación -->
+                            </div>
+              
+                            <input type="text" class="glass-input" id="input3" maxlength="7" placeholder="__ _ __">
+              
+                        </section>
+              
+                        <h3>= <span id="resultado">0</span></h3>
+              
+                     </section>
+               
+                </section>
+              
+                <section class="actions">
+                 
+                    <section class="directions">
+                        <button class="arrow-top" id="sumar">+</button>
+                        <button class="arrow-bottom" id="restar">−</button>
+                    </section>
+              
+                    <section class="buttons">
+                      <button class="button-a" id="multiplicar">×</button>
+                      <button class="button-b" id="dividir">÷</button>
+                    </section>
+              
+                    <ul class="start-reset">
+                      <li>
+                      <button class="start" id="start"></button>
+                      </li>
+                      <span class="text-start">S</span>
+                      <li>
+                      <button class="reset" id="reset"></button>
+                      </li>
+                      <span class="text-start">R</span>
+                    </ul>
+              
+                    <section class="points">
+                      <span>•••••</span><br>
+                      <span>•••••••</span><br>
+                      <span>•••••</span><br>
+                      <span>••••••</span><br>
+                      <span>••••</span>
+                    </section>
+              
+            </section>
+            
+        </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; Portfolio Personal. Marggio Robles Vargas. Cura Overa.</p>
+    </footer>
+
+    <script src="scripts/botones.js"></script>
+
+</body>
+</html>
