@@ -35,3 +35,57 @@ document.getElementById('input3').addEventListener('input', function() {
     let num2 = parseFloat(this.value) || 0;
     numeros[1] = num2;  // Guardamos el segundo número en el array
 });
+
+
+/*Apartado de Operaciones*/
+
+document.getElementById('start').addEventListener('click', function() {
+    let input1Value = document.getElementById('input1').value;
+    let input3Value = document.getElementById('input3').value;
+
+    // Solo números (sin letras ni símbolos)
+    var regex = /^[0-9]*$/;
+
+    // Validación: Si alguno de los campos tiene letras o símbolos
+    if (!regex.test(input1Value) || !regex.test(input3Value)) {
+        alert("Ups, esta calculadora solo usa Números Naturales");
+        return;  // Detener la ejecución de la operación
+    }
+
+    if (numeros.length < 2) {
+        alert("Por favor ingrese ambos números.");
+        return;
+    }
+
+    let resultado = 0;
+
+    // Si hay historial, el primer número es el último resultado en el historial
+    if (historial.length > 0) {
+        numeros[0] = historial[historial.length - 1];  // Usamos el último resultado como el primer número
+    }
+
+    // Realizamos la operación seleccionada
+    if (operacion === 'sumar') {
+        resultado = numeros[0] + numeros[1];
+    } else if (operacion === 'restar') {
+        resultado = numeros[0] - numeros[1];
+    } else if (operacion === 'multiplicar') {
+        resultado = numeros[0] * numeros[1];
+    } else if (operacion === 'dividir') {
+        if (numeros[1] !== 0) {
+            resultado = numeros[0] / numeros[1];
+        } else {
+            resultado = 'No se puede dividir por 0';
+        }
+    }
+
+    // Plantar el resultado en la página
+    document.getElementById('resultado').textContent = resultado;
+
+    // Agregar el resultado al historial
+    historial.push(resultado);
+
+    // Colocar el resultado en el campo 1 y resetear el 2
+    document.getElementById('input1').value = resultado;
+    document.getElementById('input3').value = ''; // Limpiar este campo
+});
