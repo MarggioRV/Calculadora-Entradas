@@ -24,6 +24,12 @@ body {
   --light-brow: #846662;
   --gray: #9EA1AF;
   --red: #FC6963;
+  --celeste: #3cc2ef;
+  --redR: #ed6077;
+  --grey: #666b80;
+  --transp-black: rgba(0, 0, 0, 0.1);
+  --Stroket: 4px solid #402f44;
+  --blackM: #402f44;
 }
 
 footer {

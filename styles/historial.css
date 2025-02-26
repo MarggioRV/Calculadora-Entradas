@@ -1,0 +1,339 @@
+.body-t {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    top: 57%;
+    left: 85%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+
+#screen {display: none;}
+
+.nintendo-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .actions {
+    width: 100px;
+    height: 270px;
+    border-radius: 50px 0 0 50px;
+    border: var(--Stroket);
+    text-align: center;
+    position: relative;
+    box-shadow: inset -20px 0 var(--transp-black), inset 10px 0 rgba(255, 255, 255, 0.2), inset 4px 4px rgba(255, 255, 255, 0.5);
+  }
+  
+  .actions.left {
+    background-color: var(--celeste);
+  }
+  
+  .actions.right {
+    background-color: var(--redR);
+    border-radius: 0 50px 50px 0;
+  }
+  
+  .middle {
+    padding: 6px 10px;
+    background-color: var(--grey);
+    border-top: var(--Stroket);
+    border-bottom: var(--Stroket);
+    box-shadow: inset 0 0 50px var(--blackM);
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .screen2 {
+    border: 30px solid var(--blackM);
+    background-color: var(--redR);
+    border-radius: 5px;
+    width: 370px;
+    height: 236px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .screen2 span {
+    font-family: "Arial";
+    color: var(--blackM);
+    font-size: 1.2em;
+    position: relative;
+    opacity: 1;
+    top: 0;
+    text-align: center;
+    animation: blindText 0.4s ease infinite;
+    animation-direction: alternate;
+    line-height: 1.6em;
+    z-index: 9;
+    transform: (10deg);
+  }
+  
+  .screen2 strong {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.5em;
+  }
+  
+  .screen2:after, .screen2:before, .screen2 .glass2, .screen2 .glass2:after {
+    content: "";
+    width: 200%;
+    height: 100%;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  
+  .screen2 .glass2, .screen2 .glass2:after {
+    transform: rotate(-30deg);
+    background-color: rgba(255, 255, 255, .12);
+    top: -100px;
+    z-index: 99;
+  }
+  
+  .screen2 .glass2:after {
+    transform: rotate(12deg);
+  }
+  
+  .screen2:before {
+    background-color: var(--celeste);
+    top: 0;
+    left: 0;
+  }
+  
+  .screen2:after {
+    background-color: #ffefcc;
+    top: -20%;
+    left: -130%;
+  }
+  
+  /* Animations */
+  
+  @keyframes openScreen {
+    0% {
+      transform: scaleX(0); 
+      width: 90px;
+    }
+    100% {
+      transform: scaleX(1);
+      width: 370px;
+    }
+  }
+  
+  @keyframes blindText {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.04);
+    }
+  }
+  
+  @keyframes hideText {
+    0% {
+      opacity: 1;
+      top: 0;
+    }
+    100% {
+      opacity: 0;
+      top: 20px;
+    }
+  }
+  
+  @keyframes closeScreen {
+    0% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
+      width: 90px;
+    }
+  }
+  
+  @keyframes closeScreen2 {
+    0% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(0);
+      width: 90px;
+    }
+  }
+  
+  @keyframes rotateBaseLeft {
+    0% {
+      transform: rotate(14deg);
+      left: -30px;
+    }
+    100% {
+      transform: rotate(-14deg);
+      left: 30px;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes rotateBaseRight {
+    0% {
+      transform: rotate(-14deg);
+      right: -30px;
+    }
+    100% {
+      transform: rotate(14deg);
+      right: 30px;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes topBottom {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -40px;
+    }
+    50% {
+      top: 40px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  @keyframes bottomTop {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: 40px;
+    }
+    50% {
+      top: -40px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  
+  @keyframes blueLine {
+    0% {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    8% {
+      top: -110px;
+      transform: rotate(0deg);
+    }
+    90% {
+      top: -110px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: -200px;
+      transform: rotate(0deg);
+    }
+  }
+  
+  @keyframes whiteLine {
+    0% {
+      top: 0;
+      transform: rotate(45deg);
+    }
+    8% {
+      top: 110px;
+      transform: rotate(0deg);
+    }
+    90% {
+      top: 110px;
+      transform: rotate(0deg);
+    }
+    100% {
+      top: 200px;
+      transform: rotate(0deg);
+    }
+  }
+  
+  input[type=checkbox]:checked + .nintendo-switch .screen2 {
+    animation: closeScreen -1s ease-out 0.2s;
+    animation-fill-mode: forwards;
+  }
+  
+  input[type=checkbox]:checked + .nintendo-switch .screen2 span {
+    animation: hideText 0.5s ease-out 0.6s;
+    animation-fill-mode:forwards;
+  }
+  
+  input[type=checkbox]:checked + .nintendo-switch .actions.left:after {
+    animation: rotateBaseLeft 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  input[type=checkbox]:checked + .nintendo-switch .actions.right:after {
+    animation: rotateBaseRight 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  input[type=checkbox]:checked + .nintendo-switch:after {
+    animation: shadow 0.5s ease-out 0.2s;
+    animation-fill-mode: forwards;
+  }
+  
+  input[type=checkbox]:checked + .nintendo-switch .screen2:before {
+    animation: blueLine 3s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  input[type=checkbox]:checked + .nintendo-switch .screen2:after {
+    animation: blueLine 3s ease-out 0.4s;
+    animation-fill-mode: forwards;
+  }
+  
+  input:not(:checked) + .nintendo-switch .screen2 {
+    animation: openScreen 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  /* Nueva animación para el segundo cierre */
+  input.second-activation:checked + .nintendo-switch .screen2 {
+    animation: closeScreen2 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  input.second-activation:checked + .nintendo-switch .screen2 span {
+    animation: hideText 0.5s ease-out 0.6s;
+    animation-fill-mode: forwards;
+  }
+  
+  input.second-activation:checked + .nintendo-switch .actions.left:after {
+    animation: rotateBaseLeft 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  input.second-activation:checked + .nintendo-switch .actions.right:after {
+    animation: rotateBaseRight 0.5s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  input.second-activation:checked + .nintendo-switch:after {
+    animation: shadow 0.5s ease-out 0.2s;
+    animation-fill-mode: forwards;
+  }
+  
+  input.second-activation:checked + .nintendo-switch .screen2:before {
+    animation: blueLine 3s ease-out;
+    animation-fill-mode: forwards;
+  }
+  
+  input.second-activation:checked + .nintendo-switch .screen2:after {
+    animation: blueLine 3s ease-out 0.4s;
+    animation-fill-mode: forwards;
+  }
+  

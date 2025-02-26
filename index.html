@@ -12,6 +12,7 @@
     <!-- Vinculamos el archivo CSS externo -->
     <link rel="stylesheet" href="styles/general.css" />
     <link rel="stylesheet" href="styles/calc.css" />
+    <link rel="stylesheet" href="styles/historial.css" />
   </head>
 
   <body>
@@ -59,7 +60,7 @@
                
                 </section>
               
-                <section class="actions">
+                <section class="actionsO">
                  
                     <section class="directions">
                         <button class="arrow-top" id="sumar">+</button>
@@ -95,19 +96,19 @@
         </section>
         
         <section class="body-t">
-          <input type="checkbox" id="screen" name="screen">
+          <input type="checkbox" id="screen" name="screen" checked>
           <section class="nintendo-switch">
-              <aside class="actions left"></aside>
+              <section class="actions left"></section>
               <label class="middle" for="screen">
                   <div class="screen2">
                       <div class="glass2"></div>
-                      <span>Click here to <br><strong>Animate</strong></span>
+                      <span class="screen-text"><strong><ul>s</ul></strong></span>
+                      <h3></h3>
                   </div>
               </label>
-              <aside class="actions right"></aside>
+              <section class="actions right"></section>
           </section>
       </section>
-      
 
     </main>
 
@@ -116,6 +117,9 @@
     </footer>
 
     <script src="scripts/calc.js"></script>
+    <script src="scripts/botones.js"></script>
+    <script src="scripts/imput.js"></script>
+
 
 </body>
 </html>
