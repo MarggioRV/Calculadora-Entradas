@@ -1,0 +1,108 @@
+/* From Uiverse.io by ilkhoeri */
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .inner {
+    --w: 100px;
+    --h: 150px;
+    --translateZ: calc((var(--w) + var(--h)) + 0px);
+    --rotateX: -15deg;
+    --perspective: 1000px;
+    --quantity: 6; /* Definir la cantidad de tarjetas */
+    position: absolute;
+    width: var(--w);
+    height: var(--h);
+    top: 25%;
+    left: calc(50% - (var(--w) / 2) - 2.5px);
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform: perspective(var(--perspective));
+    animation: rotating 20s linear infinite;
+  }
+  
+  
+  @keyframes rotating {
+    from {
+      transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0);
+    }
+    to {
+      transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(1turn);
+    }
+  }
+  
+  .card {
+    position: absolute;
+    border: 2px solid rgba(var(--color-card));
+    border-radius: 12px;
+    overflow: hidden;
+    inset: 0;
+    transform: rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
+    /* Variable CSS para el color de fondo */
+    background-color: var(--color-card); 
+    user-select: none; /* Evitar la selección de texto/imágenes */
+    -webkit-user-drag: none; /* Evitar el arrastre en navegadores WebKit */
+    -moz-user-drag: none; /* Evitar el arrastre en navegadores Mozilla */
+  }
+  
+  /* Asignar valores específicos a cada tarjeta con nth-child */
+  
+  .card:nth-child(1) { 
+    --index: 0; 
+    --color-card: 142, 249, 22; 
+  }
+  
+  .card:nth-child(2) { 
+    --index: 1; 
+    --color-card: 252, 142, 142;  
+  }
+  
+  .card:nth-child(3) { 
+    --index: 2; 
+    --color-card: 142, 202, 252;   
+  }
+  
+  .card:nth-child(4) { 
+    --index: 3; 
+    --color-card: 204, 142, 252; 
+  }
+  
+  .card:nth-child(5) { 
+    --index: 4; 
+    --color-card: 252, 252, 142; 
+  }
+  
+  .card:nth-child(6) { 
+    --index: 5; 
+    --color-card: 252, 208, 142; 
+  }
+  
+  .card .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: radial-gradient(
+      circle,
+      rgba(var(--color-card), 0.2) 0%,
+      rgba(var(--color-card), 0.6) 80%,
+      rgba(var(--color-card), 0.9) 100%
+    );
+  }
+  
+  .card:hover {
+    transform: scale(1.2) rotateY(calc((360deg / var(--quantity)) * var(--index))) translateZ(var(--translateZ));
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .inner:hover {
+    animation-play-state: paused;
+  }
+  
