@@ -56,7 +56,7 @@ function addLine() {
     }
   }
 
-  // Calcular el precio total
+  // Calcular el precio total por logica y  multplicación
   var totalPrice = price * quantity;
 
   // Guardar el total calculado en el array
