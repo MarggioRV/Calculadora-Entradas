@@ -152,6 +152,7 @@
  border: 2px solid var(--stroke);
  top:38.3%;
 }
+
 .screen:after, .screen:before {
  content:"";
  height: 3px;
@@ -223,6 +224,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     animation: 2s loading90 infinite;
+    
   }
   
   
@@ -420,3 +422,52 @@ body { overflow: hidden; }
 }
   
 body { overflow: hidden; }
+
+.hero-button {
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.6), 0 4px 20px rgba(255, 65, 108, 0.4);
+  position: relative;
+  outline: none;
+  left: 21%;
+  top: 40px;
+}
+
+/* Efecto de hover */
+.hero-button:hover {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  box-shadow: 0 6px 25px rgba(255, 65, 108, 0.8), 0 6px 30px rgba(255, 65, 108, 0.5);
+  transform: translateY(-5px);
+}
+
+/* Efecto al hacer clic */
+.hero-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 10px rgba(255, 65, 108, 0.5);
+}
+
+/* Efecto de brillo en el texto */
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.4) 10%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hero-button:hover::before {
+  opacity: 1;
+}
