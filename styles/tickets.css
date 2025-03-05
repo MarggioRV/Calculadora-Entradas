@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: black;
   }
   
   .inner {
@@ -101,7 +102,9 @@
     background-repeat: no-repeat; /* Evita que la imagen se repita */
   }
   
-  .card .img {
+ /* Estilos generales para el gradiente */
+
+.card .img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -111,11 +114,52 @@
         rgba(var(--color-card), 0.2) 0%,
         rgba(var(--color-card), 0.6) 80%,
         rgba(var(--color-card), 0.9) 100%
-      ),
-      url('/images/SpaceGodzilla.png'); /* Imagen de fondo */
-    background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+      );
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+/* Imágenes específicas para cada tarjeta */
+
+#card1 .img {
+    background-image: url('/images/Alien.png'), 
+                      radial-gradient(circle, rgba(var(--color-card), 0.2) 0%, 
+                      rgba(var(--color-card), 0.6) 80%, rgba(var(--color-card), 0.9) 100%);
+}
+  
+#card2 .img {
+    background-image: url('/images/ring.png'),
+                      radial-gradient(circle, rgba(var(--color-card), 0.2) 0%, 
+                      rgba(var(--color-card), 0.6) 80%, rgba(var(--color-card), 0.9) 100%);
+}
+  
+#card3 .img {
+    background-image: url('/images/FF.png'),
+                      radial-gradient(circle, rgba(var(--color-card), 0.2) 0%, 
+                      rgba(var(--color-card), 0.6) 80%, rgba(var(--color-card), 0.9) 100%);
+                      background-size: 100%;
+                     
+}
+  
+#card4 .img {
+    background-image: url('/images/SpaceGodzilla.png'),
+                      radial-gradient(circle, rgba(var(--color-card), 0.2) 0%, 
+                      rgba(var(--color-card), 0.6) 80%, rgba(var(--color-card), 0.9) 100%);
+}
+  
+#card5 .img {
+    background-image: url('/images/rexy.png'), 
+                      radial-gradient(circle, rgba(var(--color-card), 0.2) 0%, 
+                      rgba(var(--color-card), 0.6) 80%, rgba(var(--color-card), 0.9) 100%);
+                      background-size: 100%;
+  }
+  
+#card6 .img {
+    background-image: url('/images/sp.png'),
+                      radial-gradient(circle, rgba(var(--color-card), 0.2) 0%, 
+                      rgba(var(--color-card), 0.6) 80%, rgba(var(--color-card), 0.9) 100%);
+                      
   }
   
 
