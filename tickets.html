@@ -21,20 +21,25 @@
     
     <nav>
       <ul>
-        <li><a href="index.html">Calculadora</a></li>
+        <li><a href="index.html">home</a></li>
         <li><a href="tickets_proyecto.html">Entradas</a></li>
       </ul>
     </nav>
 
     <main>
+
+        <section class="cono" id="p1">
+        <span class="parte-uno">Paso</span>
+        <span class="parte-dos">1</span>
+        </section>
+      
         <section class="wrapper">
-            <section><h1>Carterlera</h1></section>
-            <section class="inner">
-    
+              <section class="inner">
+              
                 <section class="card" id="card1">
                 <div class="img"></div>
                 </section>
-    
+
                 <section class="card" id="card2">
                     <div class="img"></div>
                 </section>
@@ -54,15 +59,80 @@
                   <section class="card" id="card6">
                     <div class="img"></div>
                 </section>
+
+                <section id="core">
+                  <span>Cartelera</span>
+                </section>
     
+              </section>
+
+        </section><br>
+
+        <section class="cono" id="p2">
+          <span class="parte-uno">Paso</span>
+          <span class="parte-dos">2</span>
+        </section>
+
+        <section class="cono" id="p3">
+          <span class="parte-uno">Paso</span>
+          <span class="parte-dos">3</span>
+        </section>
+
+
+          <section class="container">
+            
+            <section class="wrapper2" id="pq1">
+              <form class="form" onsubmit="return false;">
+                <label for="age"><strong>Edad:</strong></label>
+                <input
+                  type="number"
+                  id="age"
+                  name="age"
+                  min="1"
+                  max="115"
+                  placeholder="Introduce tu edad"
+                  required
+                  oninput="if (this.value < 1) this.value = 1;"
+                  maxlength="2"
+                  class="input"
+                ><br>
+          
+                <label for="entradas"><strong>#Entradas:</strong></label>
+                <div id="entradas" class="input">
+                  <button type="button" onclick="decrease()">-</button>
+                  <input type="number" id="cantidad" value="0" min="0" class="input" readonly>
+                  <button type="button" onclick="increase()">+</button>
+                </div><br>
+          
+              <button type="button" id="botones"onclick="addLine()">Listo</button>
+              
+              </form>
             </section>
-    </section>
-        
+          
+          <section class="wrapper2" id="pq2">
+
+            <section class="check">
+              <section id="priceOutput">
+                <!-- Aquí se agregarán las nuevas líneas con el precio calculado -->
+              </section>
+              <button id="botones" type="button"  onclick="calculateTotalSum()">Total</button>
+              <!-- Contenedor para mostrar la suma total -->
+              <section id="totalContainer">
+                <p id="totalAmount">Total: 0 €</p>
+              </section>
+            </section>
+            </section>
+
+          </section>
+  
     </main>
 
     <footer>
       <p>&copy; Tarea doble, Marggio Robles Vargas. Cura Overa</p>
     </footer>
+
+    <script src="scripts/rota.js"></script>
+    <script src="scripts/masmenos.js"></script>
   
 </body>
 </html>

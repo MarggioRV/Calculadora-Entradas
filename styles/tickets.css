@@ -1,19 +1,61 @@
-/* From Uiverse.io by ilkhoeri */
+/*Selecion de Movies*/
+
 .wrapper {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    text-align: center;
+  width: 100%;
+  height: 115vh;
+  mask-image: radial-gradient(circle 10px at 0 0, transparent 0, transparent 95px, black 21px);
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #151515;
+  background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%,
+  rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%,
+  rgba(255, 255, 255, .05) 76%, transparent 77%, transparent),
+  linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%,
+  transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%,
+  transparent 77%, transparent);
+  background-size: 50px 50px;
+  }
+
+  .cono {
+    width: 90px; 
+    height: 5.5rem;
+    position: absolute;
     display: flex;
+    flex-direction: column; /* Alinea los elementos en columna */
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background-color: black;
+    background-color: red;
+    border-radius: 0% 0% 100% 0% / 0% 0% 100% 0%;
+    font-size: 1.6em;
+    transform: translateX(-50%); /* Ajuste para centrar el contenedor */
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+
+  #p1 {
+    top: 308.5px; 
+    left: 5.9%;
+  }
+
+  #p2 {
+    top: 960px; 
+    left: 5.9%;
+  }
+
+  #p3 {
+    top: 960px; 
+    left: 55.5%;
   }
   
+  
   .inner {
-    --w: 100px;
-    --h: 150px;
+    --w: 150px;
+    --h: 200px;
     --translateZ: calc((var(--w) + var(--h)) + 0px);
     --rotateX: -15deg;
     --perspective: 1000px;
@@ -23,10 +65,10 @@
     height: var(--h);
     top: 25%;
     left: calc(50% - (var(--w) / 2) - 2.5px);
-    z-index: 2;
     transform-style: preserve-3d;
     transform: perspective(var(--perspective));
     animation: rotating 20s linear infinite;
+    z-index: 0;
   }
   
   
@@ -173,3 +215,153 @@
     animation-play-state: paused;
   }
   
+  #core {
+    display: inline-block;   
+    font-size: 4em; 
+    color: var(--red);
+    text-shadow: 2px 2px 100px violet, 4px 4px 1px black; 
+    -webkit-text-stroke: 1px violet; 
+    font-family: 'Jokerman';
+    position: relative;      
+    text-align: center;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Centrado exacto */
+}
+
+/*Entrada de Info*/
+form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #0077be, #3b8df2);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: 65%; /* Reducir el ancho a la mitad */
+  max-width: 100%; /* Asegurarse de que no se desborde */
+}
+
+.input {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  color: rgb(255, 255, 255);
+  border: 2px solid #3b8df2;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.input::placeholder {
+  color: #fff;
+}
+
+.input:hover,
+.input:focus {
+  border-color: #3b8df2;
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3b8df2;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+button:hover {
+  background-color: #0077be;
+  font-size: 17px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+strong {
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper2 {
+  width: 48%;
+  height: 115vh;
+  mask-image: radial-gradient(circle 10px at 0 0, transparent 0, transparent 95px, black 21px);
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #151515;
+  background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%,
+  rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%,
+  rgba(255, 255, 255, .05) 76%, transparent 77%, transparent),
+  linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%,
+  transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%,
+  transparent 77%, transparent);
+  background-size: 50px 50px;
+  z-index: 0;
+}
+
+.check {
+  background: #F3D2C9;
+  width: 80%;
+  height: 70%;
+  margin: 70px 0 0 0;
+}
+
+#priceOutput p {
+  color: white;
+  margin: 5px 0;
+  text-align: center;
+}
+
+/* Hacer que el contenedor tenga un tamaño fijo y scroll vertical */
+#priceOutput {
+  max-height: 200px; /* Ajusta este valor si deseas que el contenedor tenga una altura diferente */
+  overflow-y: auto;  /* Habilita el scroll cuando el contenido exceda el tamaño del contenedor */
+  background-color: rgba(255, 165, 0, 0.5);
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 60%;
+  width: 100%;
+}
+
+
+#botones {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Estilo para el contenedor que muestra la suma total */
+#totalContainer {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro */
+  padding: 10px;
+  margin-top: 90px;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto; 
+}
+
+#totalAmount {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
