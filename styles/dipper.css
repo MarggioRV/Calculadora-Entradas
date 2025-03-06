@@ -471,3 +471,4 @@ body { overflow: hidden; }
 .hero-button:hover::before {
   opacity: 1;
 }
+
